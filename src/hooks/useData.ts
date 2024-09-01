@@ -1,9 +1,6 @@
 import { CanceledError } from "axios";
 import { useState, useEffect } from "react";
-import { Game } from "./useGames";
 import apiClient from "../services/api-clients";
-
-
 
 export interface FetchResponse<T> {
     count: number;
