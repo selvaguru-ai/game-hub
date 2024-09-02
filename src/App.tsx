@@ -8,10 +8,18 @@ import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import SortOrders from "./hooks/useSortOrders";
+
+export interface GameQuery {
+  sortOrder: string;
+}
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
+  const [selectedSortOrder, setSelectedSortOrder] = useState<SortOrders | null>(
     null
   );
   return (
@@ -42,7 +50,10 @@ function App() {
             selectedPlatform={selectedPlatform}
             onSelectPlatform={(platform) => setSelectedPlatform(platform)}
           />
-          <SortSelector></SortSelector>
+          <SortSelector
+            selectedSortOrder={selectedSortOrder}
+            onSelectSortOder={(sortOrder) => setSelectedSortOrder(null)}
+          />
         </HStack>
         <GameGrid
           selectedPlatform={selectedPlatform}
