@@ -1,6 +1,14 @@
 import React from "react";
 import { Game } from "../hooks/useGames";
-import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardBody,
+  Heading,
+  HStack,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
@@ -12,7 +20,12 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card>
+    <Box
+      as={Card}
+      transition="transform 0.3s ease"
+      _hover={{ transform: "scale(1.05)" }}
+      overflow="hidden" // This ensures the image and content stay within the card bounds when zooming
+    >
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
@@ -26,7 +39,7 @@ const GameCard = ({ game }: Props) => {
           <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>
-    </Card>
+    </Box>
   );
 };
 
