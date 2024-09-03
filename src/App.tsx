@@ -52,7 +52,7 @@ function App() {
           />
           <SortSelector
             selectedSortOrder={selectedSortOrder}
-            onSelectSortOder={(sortOrder) => setSelectedSortOrder(null)}
+            onSelectSortOder={() => setSelectedSortOrder(null)}
           />
         </HStack>
         <GameGrid

@@ -1,4 +1,3 @@
-import useData from "./useData";
 
 export interface SortOrders{
     id:number;
@@ -6,8 +5,5 @@ export interface SortOrders{
     image_background: string;
 }
 
-const useSortOrder = () =>{
-    return useData<SortOrders>('/genres')
-};
 
 export default SortOrders;

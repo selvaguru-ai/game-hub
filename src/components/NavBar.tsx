@@ -1,5 +1,5 @@
 import logo from "../assets/logo.webp";
-import { Button, HStack, Image } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
 import { ColorModeSwitch } from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
